@@ -36,7 +36,7 @@ async function makeMove(idx) {
 
   try {
     await new Promise(resolve => setTimeout(resolve, 600));
-    const res = await fetch('http://localhost:5000/move', {
+    const res = await fetch('https://ponderada-tic-tac-toe-backend.onrender.com/move', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ state })
@@ -99,33 +99,6 @@ function highlightWinningCells(cells) {
   }, 100);
 }
 
-document.getElementById('reset').onclick = () => {
-  state = Array(9).fill(' ');
-  gameActive = true;
-  isPlayer
-  // Destaca as células da combinação vencedora
-  setTimeout(() => {
-    document.querySelectorAll('.cell').forEach((cell, idx) => {
-      if (combination.includes(idx)) {
-        cell.style.background = '#b3e5fc';
-      }
-    });
-  }, 100);
-
-  gameActive = false;
-  isPlayerTurn = false; // Impede mais jogadas
-  return;
-}
-
-if (!state.includes(' ')) {
-  statusMessageDiv.textContent = 'Empate! 😐';
-  statusMessageDiv.style.background = '#e8eaf6';
-  gameActive = false;
-  isPlayerTurn = false; // Impede mais jogadas
-  return;
-}
-
-// Não limpa a mensagem aqui, makeMove ou reset definirão a próxima mensagem de status.
 document.getElementById('reset').onclick = () => {
   state = Array(9).fill(' ');
   gameActive = true;
