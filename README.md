@@ -4,6 +4,8 @@ Este projeto implementa um agente inteligente para jogar Jogo da Velha (Tic Tac 
 
 ## 📽️ Demonstração
 
+[TIc Tac Toe Aqui](https://ponderada-tic-tac-toe.onrender.com/)
+
 <!-- Insira aqui o link para seu vídeo de demonstração -->
 [![Veja a demonstração do jogo](https://img.youtube.com/vi/SEU_VIDEO_ID_AQUI/0.jpg)](https://www.youtube.com/watch?v=SEU_VIDEO_ID_AQUI)
 
