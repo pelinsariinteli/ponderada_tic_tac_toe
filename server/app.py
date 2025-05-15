@@ -6,7 +6,12 @@ import os
 
 app = Flask(__name__)
 CORS(app)
-data = pickle.load(open('../data/policy.pkl', 'rb'))
+
+# Determine o caminho absoluto para o diretório do script atual
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+# Construa o caminho para o arquivo policy.pkl
+POLICY_PATH = os.path.join(APP_DIR, '..', 'data', 'policy.pkl')
+data = pickle.load(open(POLICY_PATH, 'rb'))
 
 @app.route('/')
 def index():
